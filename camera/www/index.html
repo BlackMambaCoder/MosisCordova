@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: ms-appdata: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+        
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <title>Hello World</title>
+
+
+        <script type="text/javascript" src="http://cdn.socket.io/socket.io-1.0.3.js"></script>
+        
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+        <div data-role="page" id="mainPage">
+
+            <div data-role="header">        
+                <!-- <input type="button" value="Take a picture" id="btnTakePic"> -->
+                <a href="#" id="btnOpenMap" data-role="button" data-theme="a">Open map</a>
+
+                <h1>Header</h1>
+
+                <a href="#" id="btnAddLocation" data-role="button" data-theme="a">Add Location</a>
+            </div>
+
+            <div data-role="content">
+                <img src="" id="myImage" style="width:auto;height:120px;"></img>
+            </div>
+
+            <p>Name: <input type="text" id="inputName" placeHolder="name"/></p>
+            <p>Description: <input type="text" id="inputDescription" placeHolder="name"/></p>
+            <p>Latitude: <input type="text" id="inputLatitude" placeHolder="name"/></p>
+            <p>Longitude: <input type="text" id="inputLongitude" placeHolder="name"></p/>
+
+            <div data-role="content">
+                <div id="resultElement"></div>
+            </div>
+
+        </div>
+
+
+        <!-- <div data-role="page" id="cameraPage">
+        </div> -->
+
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/camera.js"></script>
+    </body>
+</html>
