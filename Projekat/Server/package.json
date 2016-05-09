@@ -1,0 +1,11 @@
+{
+  "name": "hiking",
+  "version": "0.0.1",
+  "description": "hicking socket.io app",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongodb": "^2.1.18",
+    "socket.io": "^1.4.5",
+    "babel-core": "^6.3.26"
+  }
+}

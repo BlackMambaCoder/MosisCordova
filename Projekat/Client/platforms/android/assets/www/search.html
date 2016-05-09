@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>        
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Planinarenje</title>
+
+        <!-- JQUERY MOBILE SETUP -->
+
+        <link rel="stylesheet" href="lib/jquery-mobile/css/jquery.mobile-1.4.0.min.css" />
+        <script type="text/javascript" src="lib/jquery-mobile/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="lib/jquery-mobile/js/jquery.mobile-1.4.0.min.js"></script>
+
+        <!-- GREEN GRASS CUSTOM TEMA -->
+        <link rel="stylesheet" href="css/GreenGrass.css" />
+        <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+
+         <!-- KONTROLER STRANICE -->
+        <script src="cordova.js"></script>
+        <script type="text/javascript" src="js/search.js"></script>
+        <script type="text/javascript" src="lib/socket-io/socket.io.js"></script>
+        <script type="text/javascript" src="js/server_helper.js"></script>
+        </head>
+
+    <body>
+       
+        <div role="page" id="search_page">
+
+            <!-- NASLOV -->
+            <div data-role="header" data-position="fixed">
+            <!-- DUGME HOME -->
+            <a class="ui-btn ui-icon-home ui-btn-icon-notext" id="btn_back">Nazad</a>
+                <h1>Pretraga</h1>
+            </div>
+
+            <!-- SADRZAJ -->
+            
+            <input id="filterBasic-input" data-type="search">
+            <ul data-role="listview" data-filter="true" data-input="#filterBasic-input" id="queryList">
+            </ul>
+
+            <!-- FOOTER -->
+            <div data-role="footer" data-position="fixed">
+
+            </div>
+
+    </body>
+
+</html>

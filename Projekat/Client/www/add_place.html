@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>   
+
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Planinarenje</title>
+
+        <!-- JQUERY MOBILE SETUP -->
+
+        <link rel="stylesheet" href="lib/jquery-mobile/css/jquery.mobile-1.4.0.min.css" />
+        <script type="text/javascript" src="lib/jquery-mobile/js/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="lib/jquery-mobile/js/jquery.mobile-1.4.0.min.js"></script>
+
+        <!-- GREEN GRASS CUSTOM TEMA -->
+        <link rel="stylesheet" href="css/GreenGrass.css" />
+        <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+
+        <!-- GOOGLE MAPS API KEY ZA LOKACIJU -->
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyABMbnLEMdEcyPhE6SM9MPvZYRAIffifO4">
+        </script>
+
+        <!-- KONTROLERI -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/addplace.js"></script>
+        <script type="text/javascript" src="js/device_helper.js"></script>
+        <script type="text/javascript" src="lib/socket-io/socket.io.js"></script>
+        <script type="text/javascript" src="js/server_helper.js"></script>
+        <script type="text/javascript" src="lib/locationpicker.jquery.js"></script>
+
+    </head>
+
+    <body>
+       
+        <div role="page" id="add_place_page">
+
+         <!-- NASLOV -->
+            <div data-role="header" data-position="fixed">
+            <!-- DUGME HOME -->
+            <a class="ui-btn ui-icon-home ui-btn-icon-notext" id="btn_back">Nazad</a>
+                <h1>Nova lokacija</h1>
+            </div>
+
+            <!-- SADRZAJ -->
+
+            <!-- NAZIV LOKACIJE -->
+            <label for="basic">Naziv lokacije:</label>
+    		<input type="text" name="name" id="place_name" value=""  />
+
+    		<!-- TIP LOKACIJE -->
+    		<label for="selectPlaceType" class="select">Tip lokacije:</label>
+			<select name="selectPlaceType" id="place_type">
+			<option value="Jezero">Jezero</option>
+   			<option value="Planinarski dom">Planinarski dom</option>
+   			<option value="Planinski vrh">Planinski vrh</option>
+   			<option value="Plaža">Plaža</option>
+   			<option value="Planina">Planina</option>
+			</select>
+
+			<!-- Mapa -->
+			<div id="mapContent" style="width: 824px; height: 400px;" role="main" class="ui-content"></div>
+
+			<!-- DUGME ZA DODAVANJE SLIKE -->
+			<button id='chose_image'>Izaberi fotografiju</button>
+
+			<!-- DUGME ZA CUVANJE MESTA -->
+			<button id='save_place'>Sačuvaj lokaciju</button>
+
+            <!-- FOOTER -->
+            <div data-role="footer" data-position="fixed">
+                <h1> </h1>
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
