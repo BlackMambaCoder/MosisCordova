@@ -1,6 +1,6 @@
 "use strict";
 var httpServer = require('http').Server();
-httpServer.listen(3000, '192.168.0.109');
+httpServer.listen(3000, '192.168.0.110');
 var socketIo = require('socket.io')(httpServer);
 
 //var mongoDbHelper = require('./mongoDBHelper.js');
@@ -9,12 +9,39 @@ var socketIo = require('socket.io')(httpServer);
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
 
-var mongoDbServerURL = 'mongodb://192.168.0.109:27017/MosisPlaces';
+var mongoDbServerURL = 'mongodb://192.168.0.110:27017/MosisPlaces';
 
 
 // app.get('/', function(req, res){
 //   // res.sendFile(__dirname + '/showMap.html');
 
+//   console.log("========================");
+// 		console.log("getAllPlaces");
+
+// 		MongoClient.connect(mongoDbServerURL, function(err, db)
+// 		{
+// 			if (err)
+// 			{
+// 				console.log('Unable to connect to the mongoDB server.');
+// 				console.log('Error: ', err);
+// 				//socket.emit('getAllPlacesResult', "ERROR: " + err);
+// 			}
+// 			else
+// 			{
+// 				console.log('Connection established to ', mongoDbServerURL);
+
+// 				var placeCollection = db.collection('places');
+
+// 				placeCollection.find().toArray(function(err, docs)
+// 				{
+// 					//socket.emit('getAllPlacesResult', docs);
+// 					console.log("Niz svih povratnih vrednosti: ");
+// 					console.log(docs);
+
+// 					db.close();
+// 				});
+// 			}
+// 		});
 //   console.log("Hello");
 // });
 
@@ -49,9 +76,9 @@ socketIo.sockets.on('connection', function(socket)
 					socket.emit('getAllPlacesResult', docs);
 					console.log("Niz svih povratnih vrednosti: ");
 					console.log(docs);
-				});
 
-				db.close();
+					db.close();
+				});
 			}
 		});
 	});
@@ -90,9 +117,9 @@ socketIo.sockets.on('connection', function(socket)
 						console.log("Details: ", result);
 						socket.emit('addPlaceResult', "OK");
 					}
-				});
 
-				db.close();
+					db.close();
+				});
 			}
 
 			console.log("==================");
@@ -129,7 +156,7 @@ socketIo.sockets.on('connection', function(socket)
 			{
 				var placeCollection = db.collection('places');
 
-				var cursor = placeCollection.find( { "username": usrName, "username": "default" } ).toArray(function(err, docs)
+				var cursor = placeCollection.find( { "username": usrName } ).toArray(function(err, docs)
 				{
 					if (err)
 					{
@@ -158,9 +185,9 @@ socketIo.sockets.on('connection', function(socket)
 						console.log("Niz najblizih povratnih vrednosti: ");
 						console.log(retValue);
 					}
-				});
 
-				db.close();
+					db.close();
+				});
 			}
 
 			console.log("End getNearPlaces");
@@ -197,9 +224,9 @@ socketIo.sockets.on('connection', function(socket)
 						console.log("Niz svih povratnih vrednosti: ");
 						console.log(docs);
 					}
-				});
 
-				db.close();
+					db.close();
+				});
 			}
 
 			console.log("================");
@@ -236,9 +263,9 @@ socketIo.sockets.on('connection', function(socket)
 						console.log("Niz svih povratnih vrednosti: ");
 						console.log(docs);
 					}
-				});
 
-				db.close();
+					db.close();
+				});
 			}
 
 			console.log("================");

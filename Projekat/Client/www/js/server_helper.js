@@ -4,7 +4,7 @@
 
 var connectionSocket;
 
-var SERVER_IP_ADDRESS = 'http://192.168.0.109:3000';
+var SERVER_IP_ADDRESS = 'http://192.168.0.110:3000';
 
 /* METODE ZA ODRZAVANJE KONEKCIJE */
 
